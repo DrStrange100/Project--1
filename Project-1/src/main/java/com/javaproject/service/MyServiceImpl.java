@@ -19,7 +19,12 @@ public class MyServiceImpl implements IMyService{
     }
 
     @Override
-    public List<User> getUser() {
-        return usermapper.getUser();
+    public List<User> getAllUser() {
+        return usermapper.getAllUser();
+    }
+
+    @Override
+    public User getUserById(Integer id) {
+        return usermapper.getUserById(id);
     }
 }

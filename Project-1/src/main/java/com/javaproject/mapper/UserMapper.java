@@ -14,5 +14,8 @@ public interface UserMapper {
     void createUser(User user);
 
     @Select("select * from user")
-    List<User> getUser();
+    List<User> getAllUser();
+
+    @Select("select * from user where id=#{id}")
+    User getUserById(Integer id);
 }

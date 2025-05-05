@@ -8,5 +8,7 @@ public interface IMyService {
 
     void createUser(User user);
 
-    List<User> getUser();
+    List<User> getAllUser();
+
+    User getUserById(Integer id);
 }

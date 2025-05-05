@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/project_1")
+@RequestMapping(RestConstant.PROJECT_1)
 public class Controller {
 
     @Autowired
@@ -23,9 +23,15 @@ public class Controller {
         return ResponseEntity.ok().body(ApplicationConstant.SUCCESS);
     }
 
-    @GetMapping(RestConstant.GET_USER_DETAILS)
-    public ResponseEntity<List<User>> getUserDetails() {
-        List<User> user = myservice.getUser();
+    @GetMapping(RestConstant.GET_ALL_USER_DETAILS)
+    public ResponseEntity<List<User>> getAllUser() {
+        List<User> user = myservice.getAllUser();
+        return ResponseEntity.ok().body(user);
+    }
+
+    @PostMapping(RestConstant.GET_USER_DETAILS_BY_ID)
+        public ResponseEntity<User> getUserById(@RequestBody Integer id) {
+        User user = myservice.getUserById(id);
         return ResponseEntity.ok().body(user);
     }
 
