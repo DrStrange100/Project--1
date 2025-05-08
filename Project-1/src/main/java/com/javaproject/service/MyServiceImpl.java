@@ -27,4 +27,9 @@ public class MyServiceImpl implements IMyService{
     public User getUserById(Integer id) {
         return usermapper.getUserById(id);
     }
+
+    @Override
+    public void deleteUserById(Integer id) {
+        usermapper.deleteUserById(id);
+    }
 }

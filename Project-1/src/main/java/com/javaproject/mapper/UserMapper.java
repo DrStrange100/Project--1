@@ -1,6 +1,7 @@
 package com.javaproject.mapper;
 
 import com.javaproject.dtos.User;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -18,4 +19,7 @@ public interface UserMapper {
 
     @Select("select * from user where id=#{id}")
     User getUserById(Integer id);
+
+    @Delete("delete from user where id=#{id}")
+    void deleteUserById(Integer id);
 }

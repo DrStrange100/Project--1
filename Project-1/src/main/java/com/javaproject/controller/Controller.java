@@ -30,9 +30,16 @@ public class Controller {
     }
 
     @PostMapping(RestConstant.GET_USER_DETAILS_BY_ID)
-        public ResponseEntity<User> getUserById(@RequestBody Integer id) {
+    public ResponseEntity<User> getUserById(@RequestBody Integer id) {
         User user = myservice.getUserById(id);
         return ResponseEntity.ok().body(user);
     }
+
+    @PostMapping(RestConstant.GET_USER_DETAILS_BY_ID)
+    public ResponseEntity<String> deleteUserById(@RequestBody Integer id) {
+        myservice.deleteUserById(id);
+        return ResponseEntity.ok().body(ApplicationConstant.SUCCESS);
+    }
+
 
 }
