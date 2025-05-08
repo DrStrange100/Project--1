@@ -35,7 +35,7 @@ public class Controller {
         return ResponseEntity.ok().body(user);
     }
 
-    @PostMapping(RestConstant.GET_USER_DETAILS_BY_ID)
+    @PostMapping(RestConstant.DELETE_USER_DETAILS_BY_ID)
     public ResponseEntity<String> deleteUserById(@RequestBody Integer id) {
         myservice.deleteUserById(id);
         return ResponseEntity.ok().body(ApplicationConstant.SUCCESS);

@@ -10,6 +10,8 @@ public final class RestConstant {
 
     public static final String GET_USER_DETAILS_BY_ID = USER_DETAILS + "/getbyid";
 
+    public static final String DELETE_USER_DETAILS_BY_ID = USER_DETAILS + "/deletebyid";
+
 
 
     private RestConstant() {}
